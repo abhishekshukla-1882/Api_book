@@ -38,7 +38,7 @@ class IndexController extends Controller
     public function detailAction(){
         if(isset($_POST['sub'])){
             $val =urlencode($this->request->getPost('title'));
-            // echo $val;
+            // print_r( $val->full_title);
             // die;
             $url = "https://openlibrary.org/api/books?bibkeys=ISBN:$val&jscmd=details&format=json";
         //    $url ="https://openlibrary.org/search.json?q=$val&mode=ebooks&has_fulltext=true";
