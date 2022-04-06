@@ -62,7 +62,7 @@
                   <form class="form-inline" method="POST" action="">
                     <span>
                     <input class="form-control mr-sm-2" name="val" type="search" placeholder="Search" aria-label="Search">
-                      <button class="btn btn-outline-success my-2 my-sm-0" name="submit" type="submit">Search</button>
+                    <button class="btn btn-outline-success my-2 my-sm-0" name="submit" type="submit">Search</button>
                     <span>
 
                   </form>
@@ -73,10 +73,10 @@
         <?php foreach($book as $val){ ?>
 
 						<!-- Single Product -->
-						<div class="col-md-6 col-lg-4 col-xl-3 m-3">
+						<div class="col-md-6 col-lg-4 col-xl-3 m-3 justify">
 								<div id="product-1" class="single-product">
                                     <div class="card mt-5 " style="width: 18rem;">
-                                        <img class="card-img-top" src="https://covers.openlibrary.org/b/olid/<?php echo $val->edition_key[0]; ?>-M.jpg" alt="Card image cap">
+                                        <img class="card-img-top" style="height:155px;" src="https://covers.openlibrary.org/b/olid/<?php echo $val->edition_key[0]; ?>-M.jpg" alt="Card image cap">
                                         <div class="card-body">
                                             <p class="card-text"> Title . <?php echo $val->title; ?>.</p>
                                             <p class="card-text">Edition Count -<?php echo $val->edition_count ; ?>.</p>

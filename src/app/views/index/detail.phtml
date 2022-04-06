@@ -1,3 +1,12 @@
+<?php 
+echo "<pre>";
+// print_r($book->details->identifiers->google[0]);
+// print_r(json_decode($book['details']['identifiers']['google'][0]),true);
+// die;
+// $google = $book->details->identifiers->google[0];
+
+// details
+?>
 <!DOCTYPE html>
 <html lang="en" >
 <head>
@@ -21,7 +30,20 @@
     <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
     <p class="card-text"><small class="text-muted">Publisher  <strong><?php echo $book->details->publishers[0] ; ?></strong></small></p>
     <p class="card-text"><small class="text-muted">Published Date  <?php echo $book->details->publish_date ; ?></small></p>
+    <p class="card-text"><small class="text-muted">Published Date  <?php echo $book->details->description ; ?></small></p>
     <p class="card-text"><small class="text-muted">Last updated <?php echo $book->details->last_modified->value ; ?> </small></p>
+    <p class="card-text"><small class="text-muted">Last updated <?php 
+    if(!empty($book->details->identifiers->google[0])){
+      $google = urlencode($book->details->identifiers->google[0]);
+      ?>
+     <p> <a href="https://www.google.co.in/books/edition/Slow_reading/<?php echo $book->details->identifiers->google[0] ?>?hl=en"> Goggle Link </a></p>
+  <?php }else{
+    ?> <br>Not In google<?php
+
+  }
+    ?> </small>
+
+    <!-- $book->details->identifiers->google[0] -->
   </div>
   <?php  ?>
 </div>
